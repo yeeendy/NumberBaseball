@@ -13,6 +13,24 @@
         flex-direction: column;
         align-items: center;
       }
+      button {
+        all: unset;
+        cursor: pointer;
+        padding: 10px;
+        background-color: skyblue;
+        border-radius: 20px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        box-shadow: rgba(16, 11, 34, 0.2) 5px 7px 29px 4px;
+      }
+      .hidden {
+        display: none;
+      }
+      #resetContainer {
+        display: flex;
+        justify-content: center;
+      }
       .wrapper {
         display: flex;
         align-items: center;
@@ -25,23 +43,27 @@
         flex-direction: column;
       }
     </style>
-
   </head>
   <body>
     <h1>숫자 야구 게임</h1>
-    <p>컴퓨터가 숫자를 생성하였습니다. 답을 맞춰보세요!</p>
-    <div class="wrapper">
-      <div id="gameArea">
-        <input id="userAnswer" type="text" />
-        <input id="answerBtn" type="button" value="정답 입력" />
+    <button id="gameStartBtn" onclick="gameDisplay()">Game Start</button>
+    <div id="gameContainer" class="hidden">
+      <p>컴퓨터가 숫자를 생성하였습니다. 답을 맞춰보세요!</p>
+      <div class="wrapper">
+        <div id="gameArea">
+          <input id="userAnswer" type="text" />
+          <input id="answerBtn" type="button" value="정답 입력" />
+        </div>
+        <div id="userHistory">
+          <h1>유저시도기록</h1>
+          <div id="userHistory_content"></div>
+        </div>
       </div>
-      <div id="userHistory">
-        <h1>유저시도기록</h1>
-        <div id="userHistory_content"></div>
+      <p id="answerArea"></p>
+      <div id="resetContainer">
+        <button id="resetBtn" onclick="reset()">Reset</button>
       </div>
-
     </div>
-    <p id="answerArea"></p>
     <script src="baseball.js"></script>
   </body>
 </html>
