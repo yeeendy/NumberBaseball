@@ -19,7 +19,7 @@ answerBtn.addEventListener("click", () => {
   userAnswer = userAns.value;
   let randomStr = rNumber();
   cNum(randomStr);
-  console.log(`${ball}B${strike}S`);
+  // console.log(`${ball}B${strike}S`);
   count++;
   gemeover(strike);
   // text 뜨게
@@ -27,7 +27,7 @@ answerBtn.addEventListener("click", () => {
 });
 
 gemeover = (strike) => {
-  console.log(strike);
+  // console.log(strike);
   if (strike === 3) {
     gameArea.style.display = "none";
     answerArea.innerHTML = `${count}번 만에 성공하셨습니다.`;
@@ -43,7 +43,7 @@ rNumber = () => {
       randomNum.push(num);
     }
   }
-  console.log(randomNum.join(""));
+  // console.log(randomNum.join(""));
   return randomNum.join("");
 };
 
@@ -63,7 +63,7 @@ message = () => {
   <li>${count}번째 시도 : ${userAnswer}</li>
   <li>${ball}B${strike}S</li>
   </ul>`;
-  console.log(ball, strike);
+  // console.log(ball, strike);
   userHistory_content.innerHTML += content;
   userAns.value = "";
 };
@@ -79,6 +79,7 @@ function reset() {
   //텍스트 다 지우기
   count = 0;
   userHistory_content.innerHTML = "";
+  answerArea.innerHTML = "";
   //랜덤숫자 다시 세팅
   randomNum = [];
 }
