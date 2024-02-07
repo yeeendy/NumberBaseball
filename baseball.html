@@ -4,13 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+      .wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      #userHistory {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
+
   </head>
   <body>
     <h1>숫자 야구 게임</h1>
     <p>컴퓨터가 숫자를 생성하였습니다. 답을 맞춰보세요!</p>
-    <div id="gameArea">
-      <input id="userAnswer" type="text" />
-      <input id="answerBtn" type="button" value="정답 입력" />
+    <div class="wrapper">
+      <div id="gameArea">
+        <input id="userAnswer" type="text" />
+        <input id="answerBtn" type="button" value="정답 입력" />
+      </div>
+      <div id="userHistory">
+        <h1>유저시도기록</h1>
+        <div id="userHistory_content"></div>
+      </div>
+
     </div>
     <p id="answerArea"></p>
     <script src="baseball.js"></script>
